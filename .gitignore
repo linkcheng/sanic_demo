@@ -1,0 +1,58 @@
+.idea/
+.vscode/
+.mypy_cache/
+*.py[cod]
+
+# C extensions
+*.so
+
+# Packages
+*.egg
+*.egg-info
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib
+lib64
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# Translations
+*.mo
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
+
+# Complexity
+output/
+
+# Sphinx
+docs/_build
+
+# Virtualenvs
+env/
+venv/
+Pipfile.lock
+
+# Configuration
+.env
+
+# Development database
+*.db
+
+config.yaml
+
+logs/
