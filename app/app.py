@@ -2,9 +2,9 @@
 """The app module, containing the app factory function."""
 from werkzeug.utils import find_modules, import_string
 from sanic import Sanic
+from sanic_sentry import SanicSentry
 
 from . import settings
-from .utils.error_track import client as sentry
 from .utils.sanicdb import SanicDB
 from .utils.log import configure_logging
 
@@ -24,10 +24,9 @@ def create_app(config_object=settings):
 
 def register_extensions(app):
     """Register Flask extensions."""
-    db_config = app.config.DB_CONFIG.get('XINYONGFEI_MODEL_CONFIG')
+    db_config = app.config.DB_CONFIG.get('DB_CONFIG')
     SanicDB(**db_config, sanic=app)
-    if sentry:
-        sentry.init_app(app)
+    SanicSentry(app)
     return None
 
 

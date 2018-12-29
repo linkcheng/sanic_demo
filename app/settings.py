@@ -12,9 +12,6 @@ from environs import Env
 env = Env()
 env.read_env()
 
-ENV = env.str('SANIC_ENV', default='production')
-DEBUG = ENV == 'development'
-
 # 日志目录
 LOG_DIR = env.str('LOG_DIR', default='./logs')
 

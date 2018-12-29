@@ -21,10 +21,10 @@ async def grey_list_rank(request):
       成功但没有数据: {"code": 0, "data": null}
     """
     if request.method == "GET":
-        req_json = request.json
+        req_json = request.json or request.raw_args
         logger.info(f"request.json={req_json}")
         if not req_json:
-            return json({"code": 1, "msg": "Only support Content-Type:application/json !"})
+            return json({"code": 1, "msg": "There is no parameters !"})
 
         id_card_number = req_json.get("id_card_number")
         mobile = req_json.get("mobile")
@@ -32,7 +32,8 @@ async def grey_list_rank(request):
 
         db = request.app.db
         sql = f"""select rank from GreyList where id_card_number=%s 
-            and mobile=%s and decision_time=%s;"""
+            and mobile=%s and decision_time<=%s 
+            order by decision_time desc limit 1;"""
         data = await db.get(sql, id_card_number, mobile, decision_time)
 
         logger.info(f"request.json={req_json}, response data={data}")
