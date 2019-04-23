@@ -1,5 +1,5 @@
 ===============================
-xinyongfei-bi-open
+bi-open
 ===============================
 
 Quickstart
@@ -7,7 +7,7 @@ Quickstart
 
 Run the following commands to bootstrap your environment ::
 
-    cd xinyongfei-bi-open
+    cd bi-open
     pipenv install --dev   # if error, try: pipenv run pip install pip==18.0
     cp .env.example .env
 
