@@ -1,13 +1,12 @@
-===============================
-xyf-bi-open
-===============================
+
+bi-open
 
 Quickstart
 ----------
 
 Run the following commands to bootstrap your environment ::
 
-    cd xyf-bi-open
+    cd bi-open
     pipenv install --dev   # if error, try: pipenv run pip install pip==18.0
     cp .env.example .env
 
