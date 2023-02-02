@@ -4,7 +4,7 @@ verify_ssl = false
 name = "pypi"
 
 [packages]
-Werkzeug = "==0.14.1"
+Werkzeug = "==0.15.5"
 click = ">=5.0"
 pyyaml = "==3.13"
 environs = "==4.0.0"
